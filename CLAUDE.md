@@ -29,6 +29,7 @@ recorded and delivered by the team below.
 
 ## The team (agent definitions in `.claude/agents/`; conventions in `docs/CONTRIBUTING.md`)
 Issues and PRs are titled `[Name] type(scope): summary` and signed by the owning role.
+
 | Role | Owns |
 |---|---|
 | Amara Okonkwo (`product-owner`) | Vision, wedge, roadmap, backlog, acceptance criteria, pricing |
