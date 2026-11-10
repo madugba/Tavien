@@ -27,21 +27,22 @@ recorded and delivered by the team below.
 - Typed, linted, formatted; tests written first for behaviour (TDD); no dead code.
 - Small PRs on feature branches, linked to an issue, green CI, reviewed by a second role.
 
-## The team (agent definitions in `.claude/agents/`)
+## The team (agent definitions in `.claude/agents/`; conventions in `docs/CONTRIBUTING.md`)
+Issues and PRs are titled `[Name] type(scope): summary` and signed by the owning role.
 | Role | Owns |
 |---|---|
-| `product-owner` | Vision, wedge, roadmap, backlog, acceptance criteria, pricing |
-| `principal-engineer` | Architecture, ADRs, code standards, final technical review |
-| `backend-engineer` | FastAPI services, domain modules, data layer, agent runtime |
-| `frontend-engineer` | Next.js/TypeScript web app, design-system implementation |
-| `ai-engineer` | Model layer/routing, agent intelligence, memory, tool scaling, evals |
-| `realtime-engineer` | Voice/video sessions, avatar, meeting-provider adapters |
-| `security-architect` | Threat models, policy engine, privacy, compliance flags |
-| `qa-lead` | Test strategy, e2e (Playwright), evals, release gates |
-| `devops-sre` | CI/CD, infra, cost monitoring, observability, incident response |
-| `ux-designer` | Flows, UI, accessibility, brand application |
-| `tech-writer` | Docs, ADR hygiene, changelog, user guides |
-| `growth-lead` | Positioning, landing page, launch, analytics, feedback loops |
+| Amara Okonkwo (`product-owner`) | Vision, wedge, roadmap, backlog, acceptance criteria, pricing |
+| Emmanuel Adeyemi (`principal-engineer`) | Architecture, ADRs, code standards, final technical review |
+| Lukas Brandt (`backend-engineer`) | FastAPI services, domain modules, data layer, agent runtime |
+| Priya Raman (`frontend-engineer`) | Next.js/TypeScript web app, design-system implementation |
+| Sofia Lindqvist (`ai-engineer`) | Model layer/routing, agent intelligence, memory, tool scaling, evals |
+| Mateo Alvarez (`realtime-engineer`) | Voice/video sessions, avatar, meeting-provider adapters |
+| Hannah Weiss (`security-architect`) | Threat models, policy engine, privacy, compliance flags |
+| Kwame Mensah (`qa-lead`) | Test strategy, e2e (Playwright), evals, release gates |
+| Ravi Kapoor (`devops-sre`) | CI/CD, infra, cost monitoring, observability, incident response |
+| Isabel Moreau (`ux-designer`) | Flows, UI, accessibility, brand application |
+| Chloe Bennett (`tech-writer`) | Docs, ADR hygiene, changelog, user guides |
+| Jonas Eriksson (`growth-lead`) | Positioning, landing page, launch, analytics, feedback loops |
 
 ## Delivery loop
 `product-owner` writes the issue + acceptance criteria -> `principal-engineer` approves the
