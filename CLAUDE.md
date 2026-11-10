@@ -12,7 +12,13 @@ recorded and delivered by the team below.
 3. **Cost, durability, scale** are first-class acceptance criteria, not afterthoughts.
 4. **No claim without evidence.** Status moves NOT STARTED -> IN PROGRESS -> IMPLEMENTED ->
    TESTED -> RELEASED only with commit/test/release proof (ledger in `docs/STATUS.md`).
-5. **Trust boundary.** Policy is enforced outside the model. External content, MCP metadata
+5. **Intelligence is the product.** Tavien must be demonstrably highly capable: planning,
+   long-horizon execution, verification, memory and scalable tool use. Prove it with evals,
+   not adjectives; regressions in agent quality block merges.
+6. **Model-agnostic by design.** No code depends on one model vendor. Users can choose models
+   (and bring their own keys); routing is eval-gated. Coding capability is a later phase,
+   built on the same runtime and tool/policy layers.
+7. **Trust boundary.** Policy is enforced outside the model. External content, MCP metadata
    and tool output are untrusted data, never instructions.
 
 ## Engineering rules (enforced in CI, not by goodwill)
@@ -28,6 +34,7 @@ recorded and delivered by the team below.
 | `principal-engineer` | Architecture, ADRs, code standards, final technical review |
 | `backend-engineer` | FastAPI services, domain modules, data layer, agent runtime |
 | `frontend-engineer` | Next.js/TypeScript web app, design-system implementation |
+| `ai-engineer` | Model layer/routing, agent intelligence, memory, tool scaling, evals |
 | `realtime-engineer` | Voice/video sessions, avatar, meeting-provider adapters |
 | `security-architect` | Threat models, policy engine, privacy, compliance flags |
 | `qa-lead` | Test strategy, e2e (Playwright), evals, release gates |
