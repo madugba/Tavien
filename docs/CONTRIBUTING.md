@@ -1,6 +1,6 @@
-# Contributing to Tavien
+# Contributing to Tavieri
 
-How the Tavien team works on GitHub. Every issue, PR and review is signed by the role that
+How the Tavieri team works on GitHub. Every issue, PR and review is signed by the role that
 owns it, so history reads like a professional engineering organisation.
 
 ## Team roster

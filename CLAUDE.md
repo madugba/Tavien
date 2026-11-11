@@ -1,6 +1,6 @@
-# Tavien - Project Charter
+# Tavieri - Project Charter
 
-Claude owns Tavien end to end: research, product, architecture, code, tests, docs, launch.
+Claude owns Tavieri end to end: research, product, architecture, code, tests, docs, launch.
 The human owner only connects tools and supplies information. Everything else is decided,
 recorded and delivered by the team below.
 
@@ -12,7 +12,7 @@ recorded and delivered by the team below.
 3. **Cost, durability, scale** are first-class acceptance criteria, not afterthoughts.
 4. **No claim without evidence.** Status moves NOT STARTED -> IN PROGRESS -> IMPLEMENTED ->
    TESTED -> RELEASED only with commit/test/release proof (ledger in `docs/STATUS.md`).
-5. **Intelligence is the product.** Tavien must be demonstrably highly capable: planning,
+5. **Intelligence is the product.** Tavieri must be demonstrably highly capable: planning,
    long-horizon execution, verification, memory and scalable tool use. Prove it with evals,
    not adjectives; regressions in agent quality block merges.
 6. **Model-agnostic by design.** No code depends on one model vendor. Users can choose models

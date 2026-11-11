@@ -1,10 +1,10 @@
-# Tavien - Platform Design Spec (v1)
+# Tavieri - Platform Design Spec (v1)
 
 Status: **proposed, awaiting owner review.** Evidence: `docs/research/01..05` (sources dated 2026-11-10).
 The original idea docs are superseded where this spec disagrees; reasons are given inline.
 
 ## 1. Understanding (what the owner asked for)
-Tavien is a highly intelligent, model-agnostic agent platform that can do almost any digital work through
+Tavieri is a highly intelligent, model-agnostic agent platform that can do almost any digital work through
 MCP tools, voice, vision and browser use, with coding added later. The team owns delivery end to end.
 Priorities: cost efficiency, durability, scalability, clean code (<= 100 lines per file), best practice.
 Fable is banned; Sonnet 5.5 is the default model; Opus 5.5 is for hard cases only.
@@ -79,7 +79,7 @@ day-one features. No voiceprints, face recognition or emotion inference in MVP. 
 before launch (DPIA, recording consent, bot ToS, likeness rights). SOC 2: build aligned controls now, audit later.
 
 ## 8. Risks
-Name collision (Tavus; tavien.ai); platform bot blocking (Teams auto-blocks external bots); consent
+Name collision (Tavus; tavieri.ai); platform bot blocking (Teams auto-blocks external bots); consent
 litigation; big-tech bundling; avatar cost; vendor price moves; Anthropic first-party has no EU pinning (use
 Bedrock/Vertex EU) and a $500/mo Start spend cap to raise before launch; DBOS-on-pooler and Fly drain
 behaviour are unverified and covered by M0 spikes.
@@ -89,7 +89,7 @@ Roles, names and conventions: `CLAUDE.md`, `docs/CONTRIBUTING.md`. Model policy 
 Haiku for mechanical work, Opus only with justification, Fable never. Reports stay short, scopes narrow.
 
 ## 10. Needed from the owner (batched; defaults apply if unanswered)
-1. **Name:** do you own tavien.ai? Rename if counsel confirms Tavus risk? (default: keep "Tavien" as the working name)
+1. **Name:** do you own tavieri.ai? Rename if counsel confirms Tavus risk? (default: keep "Tavieri" as the working name)
 2. **Accounts** (create or connect when M0 starts): Supabase (EU org), Fly.io, Vercel, Sentry, Grafana Cloud, Recall.ai, LiveKit Cloud, Simli, Anthropic (raise spend cap), OpenAI.
 3. **Residency and market:** EU/DACH first with EU-only data? (default: yes)
 4. **Budgets:** monthly infra ceiling and per-user voice/avatar budget (default: infra <= $250/mo until launch).
