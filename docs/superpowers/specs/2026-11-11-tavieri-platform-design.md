@@ -26,7 +26,7 @@ cost squeezes margin and Tavus/HeyGen/Synthesia already sell it.
 |---|---|---|---|
 | D1 | Python modular monolith (FastAPI, Pydantic, asyncio); Next.js/TypeScript web | Owner constraint; one language for agents + API | - |
 | D2 | **Supabase Pro (EU) as data layer only**: Postgres, pgvector, Auth, Storage. Not for media or workers | Cheapest managed Postgres+Auth; plain-Postgres exit path; own `Identity` port limits lock-in | Hetzner + Coolify when spend > ~$3-5k/mo |
-| D3 | **Fly.io** (Frankfurt), session-per-Machine for long jobs; **Vercel** for web | Cloud Run's 60-min WebSocket cap breaks hour-long sessions | Hetzner; Cloudflare for web |
+| D3 | **Fly.io** (Frankfurt): one always-on Machine for API + worker, session-per-Machine later; web as static Next.js on **Cloudflare** (Vercel Hobby is non-commercial, so it is out) | Cloud Run's 60-min WebSocket cap breaks hour-long sessions | Hetzner; Cloudflare for web |
 | D4 | **DBOS** durable workflows on Postgres; no Redis, no Temporal at launch | One datastore, durable retries/approvals, cheapest | Temporal if scale demands |
 | D5 | Agent runtime **Pydantic AI** behind our own ports | Light, typed, provider-agnostic, testable | LangGraph + PostgresSaver |
 | D6 | Own thin **`ModelProvider` port**; native Anthropic + OpenAI-compatible adapters; OpenRouter/Vercel gateway only as optional adapter; **no LiteLLM in core** (malicious releases, Mar 2026) | Keeps caching/thinking/tool-search; metering and caps in our ledger | - |
@@ -62,7 +62,18 @@ a dedicated app role plus RLS as a second layer, both tested.
 | M4 Platform | **Coding capability** (sandbox per task via `Sandbox` port, repo tools via MCP, SWE evals), STDIO MCP + desktop companion, curated directory, SDK/API, EU open-weight tier | Security review passed per feature |
 Before M2 heavy build: 15-20 design-partner interviews and a priced waitlist (>= 5% conversion target).
 
-## 6. Unit economics (verified inputs, our estimates)
+## 6. Cost plan: zero-cost track first (report 06), then paid triggers
+Pre-revenue, so M0-M2 run at **$0**: local-first (`docker compose` + `supabase start`; CI and evals never hit
+hosted services), demos on Supabase Free (EU), one Fly Machine (~$3.7/mo list, under Fly's $5 waiver,
+UNVERIFIED for company orgs; Oracle Always Free is plan B), Cloudflare static assets, free Sentry/Grafana,
+nightly encrypted `pg_dump` (Supabase Free has no backups). Models are **BYOK-first** with a capped trial
+credit ($25/month hard cap, kill switch in our ledger); free-tier models only for synthetic-data demos.
+Paid vendors (Recall.ai, LiveKit, Simli) are deferred until a design partner or revenue needs them; the first
+voice prototype is push-to-talk with Whisper, no WebRTC. Pay only at observable triggers:
+first design partner with real data ~ $35/mo (Supabase Pro + Fly), first paying customer ~ $70/mo, ~1k MAU ~ $225/mo.
+Steady-state estimates below apply once those triggers fire.
+
+### Unit economics at scale (verified inputs, our estimates)
 Core platform: ~$35 / $225 / $905 per month at 50 / 1k / 10k users (~$0.22 per MAU at 1k).
 Voice minute: ~$0.04 typical (voice-only); avatar adds $0.01 (Simli) to $0.40 (premium vendor).
 Agent tasks on Sonnet 5.5: ~$0.008 Q&A, ~$0.15 10-step browser task, ~$0.12 one-hour meeting summary.
@@ -79,7 +90,7 @@ day-one features. No voiceprints, face recognition or emotion inference in MVP. 
 before launch (DPIA, recording consent, bot ToS, likeness rights). SOC 2: build aligned controls now, audit later.
 
 ## 8. Risks
-Name collision (Tavus; tavieri.ai); platform bot blocking (Teams auto-blocks external bots); consent
+Name risk (resolved by renaming from Tavien, see ADR 0001; trademark search still needed); platform bot blocking (Teams auto-blocks external bots); consent
 litigation; big-tech bundling; avatar cost; vendor price moves; Anthropic first-party has no EU pinning (use
 Bedrock/Vertex EU) and a $500/mo Start spend cap to raise before launch; DBOS-on-pooler and Fly drain
 behaviour are unverified and covered by M0 spikes.
@@ -89,10 +100,10 @@ Roles, names and conventions: `CLAUDE.md`, `docs/CONTRIBUTING.md`. Model policy 
 Haiku for mechanical work, Opus only with justification, Fable never. Reports stay short, scopes narrow.
 
 ## 10. Needed from the owner (batched; defaults apply if unanswered)
-1. **Name:** do you own tavieri.ai? Rename if counsel confirms Tavus risk? (default: keep "Tavieri" as the working name)
-2. **Accounts** (create or connect when M0 starts): Supabase (EU org), Fly.io, Vercel, Sentry, Grafana Cloud, Recall.ai, LiveKit Cloud, Simli, Anthropic (raise spend cap), OpenAI.
+1. **Name:** decided (ADR 0001): **Tavieri**. Please register tavieri.com (optionally tavieri.app) and have counsel run the trademark search.
+2. **Accounts** for M0 (all free tiers): Supabase (EU), Fly.io (a card is required even if the bill is $0), Cloudflare, Sentry, Grafana Cloud. Later, only at triggers: Recall.ai, LiveKit, Simli, Anthropic spend-cap raise.
 3. **Residency and market:** EU/DACH first with EU-only data? (default: yes)
-4. **Budgets:** monthly infra ceiling and per-user voice/avatar budget (default: infra <= $250/mo until launch).
+4. **Budgets:** infra ceiling $0 until a trigger fires; approve a $25/month trial-credit cap for demo model usage.
 5. **Avatar:** stock/synthetic only, or the user's own likeness? (default: stock/synthetic only)
-6. **Counsel:** budget and appetite for privacy/AI-Act/trademark review before launch.
+6. **Legal:** drafts are in `docs/legal/`. Give me the legal entity, address and governing law to fill placeholders; counsel must review before launch (checklist in `docs/legal/README.md`).
 7. **Confirm** the "<= 100 lines per file" reading of your code rule.
