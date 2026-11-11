@@ -45,6 +45,19 @@ Issues and PRs are titled `[Name] type(scope): summary` and signed by the owning
 | Chloe Bennett (`tech-writer`) | Docs, ADR hygiene, changelog, user guides |
 | Jonas Eriksson (`growth-lead`) | Positioning, landing page, launch, analytics, feedback loops |
 
+## Model and token policy (binding)
+- **Fable is forbidden.** Never use `fable` for any agent or task.
+- **Default `sonnet` (Sonnet 5.5)** for all implementation, research, review and design work.
+- **`haiku`** for mechanical work: doc upkeep, changelog, formatting, running and summarising
+  test/CI output, issue and label housekeeping, simple lookups and searches.
+- **`opus` (Opus 5.5)** only when the task is hard and high-stakes: architecture decisions with
+  real trade-offs, threat models for auth/media/tool execution, eval design, or a bug Sonnet
+  already failed to solve. State the justification in the task prompt; one Opus agent at a time.
+- The lead passes `model` explicitly on every delegation; defaults live in each agent's frontmatter.
+- **Token hygiene:** self-contained short prompts that point to files instead of pasting;
+  narrow scopes; details go in files, chat reports stay <= 150 words; never re-research a settled
+  ADR; at most 3 agents in parallel; on a rate limit stop, then resume with a scoped ask.
+
 ## Delivery loop
 `product-owner` writes the issue + acceptance criteria -> `principal-engineer` approves the
 approach -> implementer builds test-first -> `qa-lead` verifies -> `security-architect`
