@@ -50,7 +50,7 @@ every participant where the law of any participant's location requires it (all-p
 wiretap laws, works-council or employee-information duties, and rules on special-category data).
 3.2 The service displays an AI-participant/recording disclosure. Customer shall not disable, obscure or
 circumvent it, and shall comply with the Acceptable Use Policy (`../acceptable-use-policy.md`) and consent
-notice requirements (`../consent-notices.md`).
+notice requirements (`../ai-transparency-and-meeting-consent.md`).
 3.3 Customer shall not submit special-category data, children's data, or data subject to sector rules
 (for example HIPAA, PCI DSS) unless Tavieri has agreed in writing and Schedule 1 is amended.
 

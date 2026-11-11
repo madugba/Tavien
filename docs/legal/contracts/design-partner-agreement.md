@@ -79,7 +79,7 @@ employee information); and honouring objections by excluding or deleting that pa
 6.2 Partner will not disable or obscure the in-product disclosure and consent features, will not use the
 Pilot Service to impersonate a person, to mislead anyone that they are speaking to a human, or to create
 voice or likeness of any real person without that person's documented consent, and will comply with the
-Acceptable Use Policy and `../consent-notices.md`.
+Acceptable Use Policy and `../ai-transparency-and-meeting-consent.md`.
 6.3 Partner will give Tavieri on request the text of notices and consents it uses, for support and
 compliance review, and indemnifies Tavieri for third-party claims arising from Partner's failure to meet
 this clause, [subject to the cap in clause 8 - COUNSEL].
